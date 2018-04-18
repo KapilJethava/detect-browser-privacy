@@ -9,7 +9,7 @@ app.use('/', express.static(__dirname));
 // app.use('/controller', express.static(__dirname) + "/controller");
 
 app.get('/', function (req, res) {
-	res.sendFile(path.join(__dirname , '/index.html'));
+	res.render('index.html');
 });
 app.listen(process.env.PORT || 4200, function(){
 	console.log(__dirname);
