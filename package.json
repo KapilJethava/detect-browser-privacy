@@ -1,5 +1,5 @@
 {
-  "name": "detectBrowserMode",
+  "name": "detect-browser-mode",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,5 +12,9 @@
     "angular-ismobile": "^1.0.0",
 	"express": "^4.16.3",
 	"angular": "^1.5.11"
+  },
+  "engines": {
+	  "node":"8.6.0",
+	  "npm":"5.6.0"
   }
 }
