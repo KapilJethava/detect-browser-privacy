@@ -13,13 +13,13 @@
 const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
-console.log(__dirname + '/service');
+
 express()
 	.use(express.static(__dirname))
-	.use(express.static(__dirname + '/assets/css'))
-	.use(express.static(__dirname + '/node_modules'))
-	.use(express.static(__dirname + '/controller'))
-	.use(express.static(__dirname + '/service'))
+	// .use(express.static(__dirname + '/assets/css'))
+	// .use(express.static(__dirname + '/node_modules'))
+	// .use(express.static(__dirname + '/controller'))
+	// .use(express.static(__dirname + '/service'))
 	// .get('/', (req, res) => {
 	// 	try{
 	// 		res.writeHead(200, {'Content-Type':'text/html'})
