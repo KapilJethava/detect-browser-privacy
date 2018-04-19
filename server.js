@@ -17,34 +17,18 @@ const PORT = process.env.PORT || 5000
 
 express()
 	.use(express.static(__dirname))
-	.get('/', (req, res)=>{
-		fs.readFile('Index.html',(err, data) => {
-			if(err) {
-				res.send(err);
-				// res.write(err);
-				// res.end();
-			} else {
-				res.send(data);
-			}
 
-
-		 })
-		// fs.readdir(__dirname, function (err, items) {
-		// 	res.send(items);
-		// });
-	})
 	// .use(express.static(__dirname + '/assets/css'))
 	// .use(express.static(__dirname + '/node_modules'))
 	// .use(express.static(__dirname + '/controller'))
 	// .use(express.static(__dirname + '/service'))
-	// .get('/', (req, res) => {
-	// 	try{
-	// 		res.writeHead(200, {'Content-Type':'text/html'})
-	// 		res.sendFile('index.html');
-	// 	} catch(e){
-	// 		res.status(200).send(e);
-	// 	}
-	// })
+	.get('/', (req, res) => {
+		try{
+			res.sendFile('Index.html');
+		} catch(e){
+			res.status(200).send(e);
+		}
+	})
 	.listen(PORT, () => console.log(`Listening on ${PORT}`))
 
 // const http = require('http');
