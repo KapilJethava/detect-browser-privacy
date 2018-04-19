@@ -20,7 +20,7 @@ express()
 	.get('/', (req, res)=>{
 		fs.readFile(__dirname+ '/index.html',(err, data) => {
 			if(err) {
-				res.send("Ha ha ha");
+				res.send(err);
 			} else {
 				res.send(data);
 			}
