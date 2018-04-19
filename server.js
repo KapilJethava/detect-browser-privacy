@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 5000
 express()
 	.use(express.static(__dirname))
 	.get('/', (req, res)=>{
-		res.send('Kapil')
+		res.send('index.html')
 	})
 	// .use(express.static(__dirname + '/assets/css'))
 	// .use(express.static(__dirname + '/node_modules'))
