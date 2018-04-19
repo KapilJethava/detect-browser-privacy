@@ -20,13 +20,14 @@ express()
 	.use(express.static(__dirname + '/node_modules'))
 	.use(express.static(__dirname + '/controller'))
 	.use(express.static(__dirname + '/service'))
-	.get('/', (req, res) => {
-		try{
-			res.sendFile('index.html');
-		} catch(e){
-			res.status(200).send(e);
-		}
-	})
+	// .get('/', (req, res) => {
+	// 	try{
+	// 		res.writeHead(200, {'Content-Type':'text/html'})
+	// 		res.sendFile('index.html');
+	// 	} catch(e){
+	// 		res.status(200).send(e);
+	// 	}
+	// })
 	.listen(PORT, () => console.log(`Listening on ${PORT}`))
 
 // const http = require('http');
