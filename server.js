@@ -25,7 +25,7 @@ express()
 	.get('/', (req, res) => {
 		try{
 			res.set('Content-Type', 'text/html');
-			res.sendFile('Index.html');
+			res.render('Index.html');
 		} catch(e){
 			res.status(200).send(e);
 		}
