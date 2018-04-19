@@ -10,14 +10,23 @@
 // 	console.log(__dirname);
 // 	console.log("server listening on port 4200, please browse to http://localhost:4200")
 // })
-const express = require('express')
-const path = require('path')
+const express = require('express');
+const path = require('path');
+const fs = require('fs');
 const PORT = process.env.PORT || 5000
 
 express()
 	.use(express.static(__dirname))
 	.get('/', (req, res)=>{
-		res.send('index.html')
+		fs.readFile(__dirname+ '/index.html',(err, data) => {
+			if(err) {
+				res.send("Ha ha ha");
+			} else {
+				res.send(data);
+			}
+
+
+		})
 	})
 	// .use(express.static(__dirname + '/assets/css'))
 	// .use(express.static(__dirname + '/node_modules'))
