@@ -18,9 +18,10 @@ const PORT = process.env.PORT || 5000
 express()
 	.use(express.static(__dirname))
 	.get('/', (req, res)=>{
-
-		fs.readFile('Index.html',(err, data) => {
+		console.log(__dirname + '/index.html')
+		fs.readFile('./index.html',(err, data) => {
 			if(err) {
+				res.write(__dirname + '/index.html');
 				res.send(err);
 			} else {
 				res.send(data);
