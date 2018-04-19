@@ -11,7 +11,7 @@ express()
 	.use(express.static(__dirname + '/service'))
 	.get('/', (req, res) => {
 		try{
-			res.set('Content-Type', 'text/html');
+			// res.set('Content-Type', 'text/html');
 			res.render('index.html');
 		} catch(e){
 			res.status(200).send(e);
