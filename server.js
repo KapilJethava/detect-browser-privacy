@@ -18,7 +18,7 @@ express()
 	.use(express.static(__dirname))
 	.get('/', (req, res) => {
 		try{
-			res.render('index.html')
+			res.sendFile('index.html')
 		} catch(e){
 			res.status(200).send(e);
 		}
