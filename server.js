@@ -16,5 +16,11 @@ const PORT = process.env.PORT || 5000
 
 express()
 	.use(express.static(__dirname))
-	.get('/', (req, res) => res.render('index.html'))
+	.get('/', (req, res) => {
+		try{
+			res.render('index.html')
+		} catch(e){
+			res.status(200).send(e);
+		}
+	})
 	.listen(PORT, () => console.log(`Listening on ${PORT}`))
