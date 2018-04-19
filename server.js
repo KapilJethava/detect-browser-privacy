@@ -22,14 +22,14 @@ express()
 	// .use(express.static(__dirname + '/node_modules'))
 	// .use(express.static(__dirname + '/controller'))
 	// .use(express.static(__dirname + '/service'))
-	.get('/', (req, res) => {
-		try{
-			res.set('Content-Type', 'text/html');
-			res.render('Index.html');
-		} catch(e){
-			res.status(200).send(e);
-		}
-	})
+	// .get('/', (req, res) => {
+	// 	try{
+	// 		res.set('Content-Type', 'text/html');
+	// 		res.render('index.html');
+	// 	} catch(e){
+	// 		res.status(200).send(e);
+	// 	}
+	// })
 	.listen(PORT, () => console.log(`Listening on ${PORT}`))
 
 // const http = require('http');
