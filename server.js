@@ -21,9 +21,9 @@ express()
 		console.log(__dirname + '/index.html')
 		fs.readFile('./index.html',(err, data) => {
 			if(err) {
-				res.write(__dirname + '/index.html');
-				res.write(err);
-				res.end();
+				res.send(__dirname + '/index.html' + JSON.stringify(err));
+				// res.write(err);
+				// res.end();
 			} else {
 				res.send(data);
 			}
