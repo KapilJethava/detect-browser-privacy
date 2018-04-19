@@ -18,21 +18,20 @@ const PORT = process.env.PORT || 5000
 express()
 	.use(express.static(__dirname))
 	.get('/', (req, res)=>{
-		console.log(__dirname + '/index.html')
-		// fs.readFile('./index.html',(err, data) => {
-		// 	if(err) {
-		// 		res.send(__dirname + '/index.html' + JSON.stringify(err));
-		// 		// res.write(err);
-		// 		// res.end();
-		// 	} else {
-		// 		res.send(data);
-		// 	}
+		fs.readFile('Index.html',(err, data) => {
+			if(err) {
+				res.send(err);
+				// res.write(err);
+				// res.end();
+			} else {
+				res.send(data);
+			}
 
 
-		// })
-		fs.readdir(__dirname, function (err, items) {
-			res.send(items);
-		});
+		 })
+		// fs.readdir(__dirname, function (err, items) {
+		// 	res.send(items);
+		// });
 	})
 	// .use(express.static(__dirname + '/assets/css'))
 	// .use(express.static(__dirname + '/node_modules'))
